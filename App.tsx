@@ -1,14 +1,8 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import Navigation from './components/Navigation';
 
 function App() {
-  return (
-    <SafeAreaView>
-      <Text>Hello Malkareddy Jithender</Text>
-    </SafeAreaView>
-  );
+  return <Navigation />;
 }
-
-// const styles = StyleSheet.create();
 
 export default App;
