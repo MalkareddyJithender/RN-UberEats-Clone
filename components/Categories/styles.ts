@@ -1,15 +1,17 @@
 import {StyleSheet} from 'react-native';
+import {IMD3Theme} from '../../theme';
 
-import Colors from '../../constants/colors';
 import {IStyles} from './types';
 
-const styles = StyleSheet.create<IStyles>({
-  categories: {
-    backgroundColor: Colors.white,
-    paddingVertical: 8,
-    marginTop: 10,
-    paddingLeft: 20,
-  },
-});
+function createStyles(theme: IMD3Theme) {
+  return StyleSheet.create<IStyles>({
+    categories: {
+      backgroundColor: theme.colors.white,
+      paddingVertical: 8,
+      marginTop: 10,
+      paddingLeft: 20,
+    },
+  });
+}
 
-export default styles;
+export default createStyles;

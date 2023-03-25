@@ -6,6 +6,7 @@ export default class Restaurant {
   categories: ICategory[] | undefined;
   rating: number;
   review_count: number | undefined;
+  price: string;
 
   constructor(restaurant: IRestaurant) {
     this.name = restaurant.name;
@@ -13,5 +14,6 @@ export default class Restaurant {
     this.categories = restaurant.categories;
     this.rating = restaurant.rating;
     this.review_count = restaurant.review_count;
+    this.price = restaurant.price;
   }
 }

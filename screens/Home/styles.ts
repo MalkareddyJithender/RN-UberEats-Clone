@@ -1,15 +1,16 @@
 import {StyleSheet} from 'react-native';
-import Colors from '../../constants/colors';
+import {IMD3Theme} from '../../theme';
 import {IStyles} from './types';
 
-const styles = StyleSheet.create<IStyles>({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.grey,
-  },
-  searchContainer: {
-    backgroundColor: Colors.white,
-  },
-});
+const createStyles = (theme: IMD3Theme) =>
+  StyleSheet.create<IStyles>({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.grey,
+    },
+    searchContainer: {
+      backgroundColor: theme.colors.white,
+    },
+  });
 
-export default styles;
+export default createStyles;

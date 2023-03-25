@@ -1,21 +1,23 @@
 import {StyleSheet} from 'react-native';
-import Colors from '../../../constants/colors';
+import {IMD3Theme} from '../../../theme';
 
-const styles = StyleSheet.create({
-  category: {
-    marginRight: 10,
-    alignItems: 'center',
-  },
-  image: {
-    width: 50,
-    height: 40,
-    resizeMode: 'contain',
-  },
-  text: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: Colors.black,
-  },
-});
+function createStyles(theme: IMD3Theme) {
+  return StyleSheet.create({
+    category: {
+      marginRight: 10,
+      alignItems: 'center',
+    },
+    image: {
+      width: 50,
+      height: 40,
+      resizeMode: 'contain',
+    },
+    text: {
+      fontSize: 12,
+      fontWeight: 'bold',
+      color: theme.colors.black,
+    },
+  });
+}
 
-export default styles;
+export default createStyles;

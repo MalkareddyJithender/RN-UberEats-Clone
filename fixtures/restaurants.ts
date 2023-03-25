@@ -3,12 +3,14 @@ export interface ICategory {
   title: string;
 }
 
+export type CategoriesType = ICategory[];
 export interface IRestaurant {
   name: string;
   image_url: string;
-  categories?: ICategory[];
+  categories?: CategoriesType;
   rating: number;
   review_count?: number;
+  price: string;
 }
 
 export type RestaurantsType = IRestaurant[];
@@ -23,6 +25,7 @@ const restaurants: RestaurantsType = [
     categories: [{alias: 'cafe', title: 'Cafe'}],
     rating: 4,
     review_count: 1233,
+    price: '$$',
   }),
   new Restaurant({
     name: 'Cafe Bahar',
@@ -31,6 +34,7 @@ const restaurants: RestaurantsType = [
     categories: [{alias: 'cafe', title: 'Cafe'}],
     rating: 4,
     review_count: 1233,
+    price: '$$',
   }),
   new Restaurant({
     name: 'Kritunga',
@@ -39,6 +43,7 @@ const restaurants: RestaurantsType = [
     categories: [{alias: 'cafe', title: 'Cafe'}],
     rating: 4.5,
     review_count: 1233,
+    price: '$$',
   }),
 ];
 

@@ -1,26 +1,29 @@
 import React from 'react';
 import {Text, Pressable, View} from 'react-native';
-import Colors from '../../../constants/colors';
+import useAppTheme from '../../../hooks/useAppTheme';
 
 import {ButtonProps} from './HeaderButtonTypes';
-import styles from './styles';
+import createStyles from './styles';
 
 function HeaderButton({
   children,
   activeTab,
   setActiveTab,
 }: ButtonProps): JSX.Element {
+  const theme = useAppTheme();
+  const styles = createStyles({children, activeTab, theme});
+
   function selectedTabHandler(): void {
     setActiveTab && setActiveTab(children);
   }
 
   return (
-    <View style={styles({children, activeTab}).buttonOuterContainer}>
+    <View style={styles.buttonOuterContainer}>
       <Pressable
-        style={styles({children, activeTab}).buttonInnerContainer}
-        android_ripple={{color: Colors.white}}
+        style={styles.buttonInnerContainer}
+        android_ripple={styles.ripple}
         onPress={selectedTabHandler}>
-        <Text style={styles({children, activeTab}).buttonText}>{children}</Text>
+        <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
     </View>
   );

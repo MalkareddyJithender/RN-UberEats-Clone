@@ -3,6 +3,8 @@ export default interface ColorTypes {
   honey: string;
   white: string;
   grey: string;
+  greyLight: string;
   greyDark: string;
   black: string;
+  green: string;
 }

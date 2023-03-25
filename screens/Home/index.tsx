@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, ScrollView, View} from 'react-native';
-import {Divider} from '@rneui/themed';
 
-import styles from './styles';
 import HeaderTabs from '../../components/Header/HeaderTabs';
 // import SearchBar from '../../components/SearchBar';
 import Categories from '../../components/Categories';
@@ -11,9 +9,12 @@ import {categories} from '../../fixtures/categories';
 import {RestaurantsType} from '../../fixtures/restaurants';
 import {getRestaurantsFromYelp} from '../../api/restaurants';
 import LoadingOverlay from '../../components/UI/LoadingOverlay';
-import BottomTabs from '../../components/BottomTabs';
+import useAppTheme from '../../hooks/useAppTheme';
+import createStyles from './styles';
 
 function Home(): JSX.Element {
+  const theme = useAppTheme();
+  const styles = createStyles(theme);
   const [restaurants, setRestaurants] = useState<RestaurantsType>([]);
 
   useEffect(() => {
@@ -39,8 +40,6 @@ function Home(): JSX.Element {
         <Categories categories={categories} />
         <Restaurants restaurants={restaurants} />
       </ScrollView>
-      <Divider width={1.5} />
-      <BottomTabs />
     </SafeAreaView>
   );
 }

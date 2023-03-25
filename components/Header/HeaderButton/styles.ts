@@ -1,17 +1,21 @@
 import {StyleSheet} from 'react-native';
 
-import {ButtonProps} from './HeaderButtonTypes';
-import Colors from '../../../constants/colors';
+import {ICreateStyles} from './HeaderButtonTypes';
 
-const styles = ({children, activeTab}: ButtonProps) =>
-  StyleSheet.create({
+function createStyles<T extends ICreateStyles>({
+  activeTab,
+  children,
+  theme,
+}: T) {
+  return StyleSheet.create({
     buttonOuterContainer: {
       borderRadius: 45,
       margin: 8,
       overflow: 'hidden',
     },
     buttonInnerContainer: {
-      backgroundColor: children === activeTab ? Colors.honey : Colors.white,
+      backgroundColor:
+        children === activeTab ? theme.colors.honey : theme.colors.white,
       paddingVertical: 8,
       paddingHorizontal: 12,
       elevation: 4,
@@ -21,9 +25,11 @@ const styles = ({children, activeTab}: ButtonProps) =>
     buttonText: {
       fontSize: 16,
       fontWeight: '700',
-      color: children === activeTab ? Colors.white : Colors.honey,
+      color: children === activeTab ? theme.colors.white : theme.colors.honey,
       textAlign: 'center',
     },
+    ripple: {color: theme.colors.white},
   });
+}
 
-export default styles;
+export default createStyles;

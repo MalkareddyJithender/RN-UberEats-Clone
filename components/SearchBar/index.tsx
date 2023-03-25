@@ -2,9 +2,13 @@ import React, {FC} from 'react';
 import {View} from 'react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import styles from './styles';
+import useAppTheme from '../../hooks/useAppTheme';
+import createStyles from './styles';
 
 const SearchBar: FC = () => {
+  const theme = useAppTheme();
+  const styles = createStyles(theme);
+
   return (
     <View>
       <GooglePlacesAutocomplete

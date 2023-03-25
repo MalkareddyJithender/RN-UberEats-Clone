@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, ActivityIndicator} from 'react-native';
-import Colors from '../../../constants/colors';
-import styles from './styles';
+import useAppTheme from '../../../hooks/useAppTheme';
+import createStyles from './styles';
 
 interface LoadingOverlayProps {
   message: string;
@@ -9,10 +9,12 @@ interface LoadingOverlayProps {
 }
 
 const LoadingOverlay: FC<LoadingOverlayProps> = ({message, size}) => {
+  const theme = useAppTheme();
+  const styles = createStyles(theme);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{message}</Text>
-      <ActivityIndicator size={size} color={Colors.orange} />
+      <ActivityIndicator size={size} color={theme.colors.orange} />
     </View>
   );
 };

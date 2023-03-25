@@ -10,6 +10,7 @@ export async function getRestaurantsFromYelp() {
 
   const res = await fetch(YELP_URL, apiOptions);
   const json = await res.json();
+  console.log(json.businesses);
   const response = json.businesses.map((rest: any) => {
     const restaurant = {
       name: rest.name,
@@ -17,6 +18,7 @@ export async function getRestaurantsFromYelp() {
       categories: rest.categories,
       rating: rest.rating,
       review_count: rest.review_count,
+      price: rest.price,
     };
     return restaurant;
   });

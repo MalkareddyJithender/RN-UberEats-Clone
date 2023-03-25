@@ -1,7 +1,10 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {Divider} from '@rneui/base';
-import styles from './styles';
+
+import createStyles from './styles';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import useAppTheme from '../../../../hooks/useAppTheme';
 
 interface MenuItemProps {
   title: string;
@@ -10,15 +13,23 @@ interface MenuItemProps {
   image: string;
 }
 
-export default function index({
+export default function Index({
   title,
   description,
   price,
   image,
 }: MenuItemProps): JSX.Element {
+  const theme = useAppTheme();
+  const styles = createStyles(theme);
+
   return (
     <View>
       <View style={styles.menuItem}>
+        <BouncyCheckbox
+          fillColor={theme.colors.green}
+          iconStyle={styles.checkboxIcon}
+          innerIconStyle={styles.checkboxInnerIcon}
+        />
         <View style={styles.menuInfo}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.text}>{description}</Text>

@@ -1,18 +1,18 @@
-import Colors from '../../constants/colors';
+import {IMD3Theme} from '../../theme';
 
-const styles = {
+const createStyles = (theme: IMD3Theme) => ({
   textInput: {
-    backgroundColor: Colors.white,
+    backgroundColor: theme.colors.white,
     borderRadius: 20,
     fontWeight: '400',
     marginTop: 7,
     marginHorizontal: 12,
   },
   textInputContainer: {
-    backgroundColor: Colors.white,
+    backgroundColor: theme.colors.white,
     borderRadius: 50,
     flexDirection: 'row',
   },
-};
+});
 
-export default styles;
+export default createStyles;
