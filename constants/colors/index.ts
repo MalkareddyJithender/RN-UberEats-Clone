@@ -9,6 +9,7 @@ const Colors: ColorTypes = {
   greyDark: '#bdb9b9',
   black: '#000',
   green: '#3CB043',
+  heart: '#B01E28',
 };
 
 export default Colors;

@@ -7,4 +7,5 @@ export default interface ColorTypes {
   greyDark: string;
   black: string;
   green: string;
+  heart: string;
 }

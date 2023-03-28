@@ -30,9 +30,9 @@ const BottomTabs = [
     options: {tabBarLabel: 'Browse', tabBarIcon: withIcon('search-outline')},
   },
   {
-    name: 'Cart',
+    name: 'Favourites',
     component: Home,
-    options: {tabBarLabel: 'Cart', tabBarIcon: withIcon('cart-outline')},
+    options: {tabBarLabel: 'Favourites', tabBarIcon: withIcon('heart-outline')},
   },
   {
     name: 'Orders',

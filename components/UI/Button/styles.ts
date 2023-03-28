@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { IMD3Theme } from '../../../theme';
+import {IMD3Theme} from '../../../theme';
 
 const createStyles = (theme: IMD3Theme) =>
   StyleSheet.create({
@@ -18,7 +18,7 @@ const createStyles = (theme: IMD3Theme) =>
       fontWeight: '400',
     },
     pressed: {
-      opacity: 0.65,
+      opacity: 0.8,
     },
   });
 

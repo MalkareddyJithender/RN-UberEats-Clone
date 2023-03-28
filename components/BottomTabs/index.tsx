@@ -12,6 +12,7 @@ export default function Index(): JSX.Element {
   return (
     <View style={styles.tabsContainer}>
       <IconButton
+        type="FontAwesome5"
         icon="home"
         size={25}
         color={theme.colors.black}
@@ -19,6 +20,7 @@ export default function Index(): JSX.Element {
         textStyle={styles.iconText}
       />
       <IconButton
+        type="FontAwesome5"
         icon="search"
         size={25}
         color={theme.colors.black}
@@ -26,6 +28,7 @@ export default function Index(): JSX.Element {
         textStyle={styles.iconText}
       />
       <IconButton
+        type="FontAwesome5"
         icon="shopping-bag"
         size={25}
         color={theme.colors.black}
@@ -33,6 +36,7 @@ export default function Index(): JSX.Element {
         textStyle={styles.iconText}
       />
       <IconButton
+        type="FontAwesome5"
         icon="receipt"
         size={25}
         color={theme.colors.black}
@@ -40,6 +44,7 @@ export default function Index(): JSX.Element {
         textStyle={styles.iconText}
       />
       <IconButton
+        type="FontAwesome5"
         icon="user"
         size={25}
         color={theme.colors.black}

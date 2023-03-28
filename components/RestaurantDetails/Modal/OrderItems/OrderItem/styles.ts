@@ -1,20 +1,19 @@
 import {StyleSheet} from 'react-native';
-import {IMD3Theme} from '../../../theme';
+import {IMD3Theme} from '../../../../../theme';
 
 const createStyles = (theme: IMD3Theme) =>
   StyleSheet.create({
-    info: {
-      margin: 15,
+    item: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 18,
     },
-    title: {
-      fontSize: 22,
-      fontWeight: '700',
+    itemName: {
       color: theme.colors.black,
-      marginBottom: 6,
+      fontWeight: '600',
     },
-    description: {
-      fontSize: 13,
-      fontWeight: '400',
+    itemPrice: {
       color: theme.colors.greyDark,
     },
   });
