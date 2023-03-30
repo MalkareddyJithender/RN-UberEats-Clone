@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {AuthenticatedStackNavigator} from './StackNavigator';
+import {AuthenticatedStackNavigator} from './StackNavigator/StackNavigator';
 import {TabBarIconProps} from './types';
 import Home from '../../screens/Home';
 

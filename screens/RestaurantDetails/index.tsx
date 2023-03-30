@@ -1,7 +1,6 @@
 import {Divider} from '@rneui/base';
 import React, {useState} from 'react';
 import {View} from 'react-native';
-import {useRoute} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 
 import Menu from '../../components/RestaurantDetails/Menu';
@@ -16,10 +15,12 @@ import {RootState} from '../../store/index';
 import {FoodItemsType} from '../../store/features/restaurant';
 import {getFoodItemsTotal} from '../../utils/restaurant';
 import Loading from '../../components/Loading';
+import {ScreenProps} from '../../components/Navigation/StackNavigator/types';
 
-function RestaurantDetails(): JSX.Element {
+function RestaurantDetails({
+  route,
+}: ScreenProps<'RestaurantDetails'>): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false);
-  const route = useRoute();
   const theme = useAppTheme();
   const styles = createStyles();
   const selectedItems = useSelector(
@@ -27,7 +28,7 @@ function RestaurantDetails(): JSX.Element {
   ) as FoodItemsType;
   const [modalVisible, setModalVisible] = useState(false);
 
-  const restaurant = route.params?.restaurant;
+  const restaurant = route.params.restaurant;
   console.log(restaurant);
   const categoriesNew = getFormattedCategories(restaurant.categories);
   const description = `${categoriesNew} . ${restaurant.price} . 🎟 . ${restaurant.rating} ⭐ (${restaurant.review_count}+)`;

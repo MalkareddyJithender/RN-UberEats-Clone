@@ -5,13 +5,14 @@ import {useNavigation} from '@react-navigation/native';
 import {IRestaurant} from '../../../fixtures/restaurants';
 import {createStyles} from './styles';
 import useAppTheme from '../../../hooks/useAppTheme';
+import {ScreenNavigationProp} from '../../Navigation/StackNavigator/types';
 
 interface RestaurantProps {
   restaurant: IRestaurant;
 }
 
 const Restaurant: FC<RestaurantProps> = ({restaurant}) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<ScreenNavigationProp<'Home'>>();
   const theme = useAppTheme();
   const styles = createStyles(theme);
 

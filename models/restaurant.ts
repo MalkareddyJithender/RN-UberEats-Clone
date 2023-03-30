@@ -3,9 +3,9 @@ import {ICategory, IRestaurant} from '../fixtures/restaurants';
 export default class Restaurant {
   name: string;
   image_url: string;
-  categories: ICategory[] | undefined;
+  categories: ICategory[];
   rating: number;
-  review_count: number | undefined;
+  review_count: number;
   price: string;
 
   constructor(restaurant: IRestaurant) {

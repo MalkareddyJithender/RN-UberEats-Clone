@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React from 'react';
 import {ScrollView, View, Text, Modal} from 'react-native';
 import {useRoute, useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
@@ -9,13 +9,11 @@ import OrderItems from './OrderItems';
 import SubTotal from './SubTotal';
 import Button from '../../UI/Button';
 import createStyles from './styles';
-
-interface ModalProps {
-  modalVisible: boolean;
-  cartTotal: string;
-  closeModal: () => void;
-  setLoading: Dispatch<SetStateAction<boolean>>;
-}
+import {ModalProps} from './types';
+import {
+  ScreenNavigationProp,
+  ScreenRouteProp,
+} from '../../Navigation/StackNavigator/types';
 
 export default function Index({
   modalVisible,
@@ -25,9 +23,9 @@ export default function Index({
 }: ModalProps): JSX.Element {
   const theme = useAppTheme();
   const styles = createStyles(theme);
-  const route = useRoute();
-  const navigation = useNavigation();
-  const restaurant = route.params?.restaurant;
+  const route = useRoute<ScreenRouteProp<'RestaurantDetails'>>();
+  const navigation = useNavigation<ScreenNavigationProp<'RestaurantDetails'>>();
+  const restaurant = route.params.restaurant;
   const selectedItems = useSelector(
     (state: RootState) => state.restaurant.menuItems,
   );

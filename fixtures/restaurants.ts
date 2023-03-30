@@ -7,9 +7,9 @@ export type CategoriesType = ICategory[];
 export interface IRestaurant {
   name: string;
   image_url: string;
-  categories?: CategoriesType;
+  categories: CategoriesType;
   rating: number;
-  review_count?: number;
+  review_count: number;
   price: string;
 }
 

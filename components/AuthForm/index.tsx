@@ -8,6 +8,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import createStyles from './styles';
 import useAppTheme from '../../hooks/useAppTheme';
 import {useNavigation} from '@react-navigation/native';
+import {ScreenNavigationProp} from '../Navigation/StackNavigator/types';
 const authFormBGImg = require('../../assets/images/splash.png');
 
 interface AuthFormProps {
@@ -35,7 +36,7 @@ const AuthForm: FC<AuthFormProps> = ({
 }) => {
   const theme = useAppTheme();
   const styles = createStyles(theme);
-  const navigation = useNavigation();
+  const navigation = useNavigation<ScreenNavigationProp<'SignUp' | 'SignIn'>>();
 
   const accStatusText = `${isLogin ? "Don't" : 'Already'} have an account ?`;
 
