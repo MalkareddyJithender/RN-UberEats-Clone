@@ -10,6 +10,7 @@ const Colors: ColorTypes = {
   black: '#000',
   green: '#3CB043',
   heart: '#B01E28',
+  red: '#FF0000',
 };
 
 export default Colors;

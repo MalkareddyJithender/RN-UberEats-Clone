@@ -1,23 +1,22 @@
 import React, {useState, FC} from 'react';
-import {View} from 'react-native';
-import {Text, TextInput} from 'react-native-paper';
+import AuthForm from '../../components/AuthForm';
 
 const Signup: FC = () => {
   const [userEmail, setUserEmail] = useState<string>('');
-
-  function emailChangeHandler(enteredEmail: string) {
-    setUserEmail(enteredEmail);
-  }
-
+  const [userPassword, setUserPassword] = useState<string>('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   return (
-    <View>
-      <Text variant="headlineLarge">Sign Up</Text>
-      <TextInput
-        label="E-mail"
-        value={userEmail}
-        onChangeText={emailChangeHandler}
-      />
-    </View>
+    <AuthForm
+      isLogin={false}
+      title="Sign Up"
+      userEmail={userEmail}
+      setUserEmail={setUserEmail}
+      userPassword={userPassword}
+      setUserPassword={setUserPassword}
+      confirmPassword={confirmPassword}
+      setConfirmPassword={setConfirmPassword}
+      buttonLabel="Sign Up"
+    />
   );
 };
 

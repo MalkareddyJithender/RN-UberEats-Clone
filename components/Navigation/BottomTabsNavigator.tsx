@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import StackNavigator from './StackNavigator';
+import {AuthenticatedStackNavigator} from './StackNavigator';
 import {TabBarIconProps} from './types';
 import Home from '../../screens/Home';
 
@@ -18,7 +18,7 @@ const withIcon = (name: string) => {
 const BottomTabs = [
   {
     name: 'Main',
-    component: StackNavigator,
+    component: AuthenticatedStackNavigator,
     options: {
       tabBarLabel: 'Home',
       tabBarIcon: withIcon('home-outline'),
