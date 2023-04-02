@@ -14,6 +14,7 @@ export default function SignIn(): JSX.Element {
       setUserEmail={setUserEmail}
       setUserPassword={setUserPassword}
       buttonLabel="Sign In"
+      onSubmit={() =>{}}
     />
   );
 }

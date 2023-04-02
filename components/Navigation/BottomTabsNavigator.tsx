@@ -2,16 +2,16 @@ import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {AuthenticatedStackNavigator} from './StackNavigator/StackNavigator';
 import {TabBarIconProps} from './types';
 import Home from '../../screens/Home';
+import {AuthenticatedStackNavigator} from './StackNavigator/StackNavigator';
 
 // Bottom Tabs Navigator
 const Tab = createBottomTabNavigator();
 
-const withIcon = (name: string) => {
-  return ({size, color}: TabBarIconProps) => (
-    <Icon name={name} size={size} color={color} />
+const withIcon = (icon: string, filledIcon: string) => {
+  return ({size, color, focused}: TabBarIconProps) => (
+    <Icon name={focused ? filledIcon : icon} size={size} color={color} />
   );
 };
 
@@ -21,28 +21,28 @@ const BottomTabs = [
     component: AuthenticatedStackNavigator,
     options: {
       tabBarLabel: 'Home',
-      tabBarIcon: withIcon('home-outline'),
+      tabBarIcon: withIcon('home-outline', 'home'),
     },
   },
   {
     name: 'Browse',
     component: Home,
-    options: {tabBarLabel: 'Browse', tabBarIcon: withIcon('search-outline')},
+    options: {tabBarLabel: 'Browse', tabBarIcon: withIcon('search-outline','search')},
   },
   {
     name: 'Favourites',
     component: Home,
-    options: {tabBarLabel: 'Favourites', tabBarIcon: withIcon('heart-outline')},
+    options: {tabBarLabel: 'Favourites', tabBarIcon: withIcon('heart-outline','heart')},
   },
   {
     name: 'Orders',
     component: Home,
-    options: {tabBarLabel: 'Orders', tabBarIcon: withIcon('receipt-outline')},
+    options: {tabBarLabel: 'Orders', tabBarIcon: withIcon('receipt-outline','receipt')},
   },
   {
     name: 'Account',
     component: Home,
-    options: {tabBarLabel: 'Account', tabBarIcon: withIcon('person-outline')},
+    options: {tabBarLabel: 'Account', tabBarIcon: withIcon('person-outline','person')},
   },
 ];
 

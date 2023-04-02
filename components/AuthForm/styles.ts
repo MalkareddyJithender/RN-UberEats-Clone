@@ -3,10 +3,19 @@ import {IMD3Theme} from '../../theme';
 
 const createStyles = (theme: IMD3Theme) =>
   StyleSheet.create({
-    container: {
+    root: {
       flex: 1,
+    },
+    container: {
       padding: 24,
       justifyContent: 'center',
+    },
+    upperContainer: {
+      flex: 0.85,
+      justifyContent: 'center',
+    },
+    lowerContainer: {
+      flex: 0.15,
     },
     backgroundImage: {
       opacity: 0.6,
@@ -38,13 +47,17 @@ const createStyles = (theme: IMD3Theme) =>
       color: theme.colors.primary,
     },
     finalTextContainer: {
-      width: '100%',
-      position: 'absolute',
-      bottom: 10,
+      // width: '100%',
+      // position: 'absolute',
+      // bottom: 10,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      alignSelf: 'center',
+      // alignSelf: 'center',
+    },
+    socialSignInContainer: {
+      justifyContent: 'flex-end',
+      alignItems: 'center',
     },
     finalText: {
       marginRight: 0,

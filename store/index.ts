@@ -1,10 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {useDispatch} from 'react-redux';
+
 import RestaurantReducer from './features/restaurant';
+import AuthReducer from './features/auth';
 
 const store = configureStore({
   reducer: {
     restaurant: RestaurantReducer,
+    auth: AuthReducer,
   },
 });
 

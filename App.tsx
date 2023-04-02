@@ -6,9 +6,15 @@ import Navigation from './components/Navigation';
 import {theme} from './theme';
 import store from './store';
 import SplashScreen from 'react-native-splash-screen';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 function App() {
   useEffect(() => {
+    // google signin
+    GoogleSignin.configure({
+      webClientId:
+        '362995428229-94pt280vqjj531j7aj5qtcpceerjtd4g.apps.googleusercontent.com',
+    });
     SplashScreen.hide();
   }, []);
 
