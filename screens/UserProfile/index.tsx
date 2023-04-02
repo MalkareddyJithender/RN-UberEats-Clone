@@ -11,7 +11,7 @@ export default function index() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>User Profile</Text>
+      
     </SafeAreaView>
   );
 }

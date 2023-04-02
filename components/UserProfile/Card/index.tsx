@@ -8,7 +8,7 @@ export default function Index(): JSX.Element {
   const styles = createStyles(theme);
 
   return (
-    <View>
+    <View style={}>
       <Text>index</Text>
     </View>
   );
