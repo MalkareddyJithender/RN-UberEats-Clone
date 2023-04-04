@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import {TabBarIconProps} from './types';
 import Home from '../../screens/Home';
+import UserProfile from '../../screens/UserProfile';
 import {AuthenticatedStackNavigator} from './StackNavigator/StackNavigator';
 
 // Bottom Tabs Navigator
@@ -41,7 +42,7 @@ const BottomTabs = [
   },
   {
     name: 'Account',
-    component: Home,
+    component: UserProfile,
     options: {tabBarLabel: 'Account', tabBarIcon: withIcon('person-outline','person')},
   },
 ];

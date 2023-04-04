@@ -11,6 +11,7 @@ const Colors: ColorTypes = {
   green: '#3CB043',
   heart: '#B01E28',
   red: '#FF0000',
+  blue: '#1b7ced',
 };
 
 export default Colors;

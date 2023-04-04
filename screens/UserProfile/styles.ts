@@ -5,7 +5,6 @@ const createStyles = (theme: IMD3Theme) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      padding: 5,
     },
   });
 

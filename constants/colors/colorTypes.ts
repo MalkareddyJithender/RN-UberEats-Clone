@@ -9,4 +9,5 @@ export default interface ColorTypes {
   green: string;
   heart: string;
   red: string;
+  blue: string;
 }

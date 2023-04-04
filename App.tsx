@@ -15,6 +15,8 @@ function App() {
       webClientId:
         '362995428229-94pt280vqjj531j7aj5qtcpceerjtd4g.apps.googleusercontent.com',
     });
+
+    // hides splash screen
     SplashScreen.hide();
   }, []);
 

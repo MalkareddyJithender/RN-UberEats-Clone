@@ -32,8 +32,6 @@ const authSlice = createSlice({
       state.googleUser = null;
     },
     setGoogleUser: (state, action: PayloadAction<IGoogleUser>) => {
-      debugger;
-      console.log('payload', action.payload);
       state.googleUser = action.payload;
       state.user = null;
     },
