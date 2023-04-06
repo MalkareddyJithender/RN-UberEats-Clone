@@ -12,12 +12,13 @@ import {RootState} from '../../store';
 export default function Index() {
   const theme = useAppTheme();
   const styles = createStyles(theme);
-  const guser = useSelector((state: RootState) => state.auth.googleUser);
+  const auth = useSelector((state: RootState) => state.auth);
+  const user = auth.user || auth.googleUser;
 
   return (
     <SafeAreaView style={styles.container}>
       <UserCard />
-      <UserItem icon="mail" title="Email" text={guser?.email} />
+      <UserItem icon="mail" title="Email" text={user?.email} />
       <UserItem
         icon="phone-portrait-outline"
         title="Mobile"

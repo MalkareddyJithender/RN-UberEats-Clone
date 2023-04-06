@@ -8,6 +8,12 @@ const createStyles = (theme: IMD3Theme) =>
       padding: 16,
       borderRadius: 8,
     },
+    iconsContainer:{
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 8,
+    },
     userInfo: {
       justifyContent: 'center',
       alignItems: 'center',

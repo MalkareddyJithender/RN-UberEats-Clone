@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import AuthForm from '../../components/AuthForm';
-import {loginUser} from '../../utils/auth';
+import {getNameFromEmail, loginUser} from '../../utils/auth';
 import {useAppDispatch} from '../../store';
 import {setUser} from '../../store/features/auth';
 
@@ -11,13 +11,16 @@ export default function SignIn(): JSX.Element {
 
   async function handleSignIn() {
     try {
-      const {user} = await loginUser(userEmail, userPassword);
-      dispatch(
-        setUser({
-          email: user.email,
-          uid: user.uid,
-        }),
-      );
+      await loginUser(userEmail, userPassword);
+      // const userName = getNameFromEmail(user.email!);
+
+      // dispatch(
+      //   setUser({
+      //     email: user.email,
+      //     displayName: userName,
+      //     uid: user.uid,
+      //   }),
+      // );
     } catch (e) {
       console.log('error', e);
     }

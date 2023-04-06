@@ -75,15 +75,15 @@ const AuthForm: FC<AuthFormProps> = ({
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
       const {idToken} = await GoogleSignin.signIn();
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      const {user} = await auth().signInWithCredential(googleCredential);
-      const gUser = {
-        uid: user.uid,
-        displayName: user.displayName,
-        email: user.email,
-        photoUrl: user.photoURL,
-      };
-      // dispatch action
-      dispatch(setGoogleUser(gUser));
+      await auth().signInWithCredential(googleCredential);
+      // const gUser = {
+      //   uid: user.uid,
+      //   displayName: user.displayName,
+      //   email: user.email,
+      //   photoUrl: user.photoURL,
+      // };
+      // // dispatch action
+      // dispatch(setGoogleUser(gUser));
     } catch (e) {
       console.log('error', e);
     }

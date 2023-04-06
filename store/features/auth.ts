@@ -3,6 +3,7 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 // types
 interface IUser {
   email: string | null;
+  displayName: string;
   uid: string;
 }
 
@@ -35,11 +36,16 @@ const authSlice = createSlice({
       state.googleUser = action.payload;
       state.user = null;
     },
+    setInitialState: (state) =>{
+      state.googleUser = null;
+      state.user = null;
+    }
   },
 });
 
 // action generators
 export const setUser = authSlice.actions.setUser;
 export const setGoogleUser = authSlice.actions.setGoogleUser;
+export const setInitialState = authSlice.actions.setInitialState;
 
 export default authSlice.reducer;

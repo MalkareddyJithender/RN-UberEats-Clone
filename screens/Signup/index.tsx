@@ -1,7 +1,7 @@
 import React, {useState, FC} from 'react';
 import AuthForm from '../../components/AuthForm';
-import {createUser} from '../../utils/auth';
-import {setUser} from '../../store/features/auth';
+import {createUser, getNameFromEmail} from '../../utils/auth';
+import {setGoogleUser, setUser} from '../../store/features/auth';
 import {useAppDispatch} from '../../store';
 
 const Signup: FC = () => {
@@ -13,13 +13,15 @@ const Signup: FC = () => {
 
   async function handleSignUp() {
     try {
-      const user = await createUser(userEmail, userPassword);
-      dispatch(
-        setUser({
-          email: user.user.email,
-          uid: user.user.uid,
-        }),
-      );
+      await createUser(userEmail, userPassword);
+      // const userName = getNameFromEmail(user.email!);
+      // dispatch(
+      //   setUser({
+      //     email: user.email,
+      //     displayName: userName,
+      //     uid: user.uid,
+      //   }),
+      // );
     } catch (e: any) {
       console.info('error', e.code, e.message);
       setErrorMessage(e);

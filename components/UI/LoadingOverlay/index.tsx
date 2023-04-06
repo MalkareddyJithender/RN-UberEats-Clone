@@ -4,7 +4,7 @@ import useAppTheme from '../../../hooks/useAppTheme';
 import createStyles from './styles';
 
 interface LoadingOverlayProps {
-  message: string;
+  message?: string;
   size: 'small' | 'large';
 }
 
